@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Nova Mono', monospace, sans-serif;
+    font-weight: normal;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #000000, #aaaaaa);
+}
+
+.banner {
+    background-color: #006699;
+    height: 10vmin;
+    width: 100vmin;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 60px;
+    color: white;
+}
+
