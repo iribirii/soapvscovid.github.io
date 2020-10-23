@@ -72,6 +72,16 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Mis cosas */
+
+#water-tank {
+    width: 100%;
+    background-color: #00aaff;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Basic */
 
 	@-ms-viewport {
