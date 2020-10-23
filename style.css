@@ -27,3 +27,12 @@ body {
     color: white;
 }
 
+#water-tank {
+    background-color: #00aaff;
+    height: 60vmin;
+    width: 100vmin;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
