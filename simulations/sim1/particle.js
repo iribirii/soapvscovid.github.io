@@ -19,7 +19,7 @@ class Particle {
             this.free = false;
         } else if (this.t == "V") {
             this.vel = createVector(0, -1);
-            this.color = 'rgb(0, 255, 0)';
+            this.color = 'rgb(50, 125, 20)';
             this.r = radiV;
             this.free = false;
         }
@@ -126,24 +126,20 @@ class Particle {
             noStroke();
             push();
             translate(this.pos.x, this.pos.y);
-            fill(128, 197, 222);
-            //exterior circle
-            //circle(0, 0, 2 * this.r);
-            fill(this.color)
-            // interior circle
-            circle(0, 0, 2 * this.r*0.85);
             // exterior horizontal and radial rectangles
-            fill(this.color);
+            fill('rgb(45, 75, 20)');
             for (var i = 0; i <= nCap-1; i++) {
                 rotate(angle);
             rect(-l/4/2, 0, l/4, this.r);
             ellipse(0, this.r , l*2, l/2);
             //rect(-l/2, this.r / 2, l, l/4);
           }
-            fill(165);
+            // interior circle
+            fill(this.color)
+            circle(0, 0, 2 * this.r*0.85);
+            fill('rgb(125, 235, 155');
             circle(this.r * 0.4, this.r * 0.4, this.r * 0.15)
             circle(-this.r * 0.4, -this.r * 0.12, this.r * 0.15)
-            fill(180);
             circle(this.r * 0.4, -this.r * 0.12, this.r * 0.09)
             circle(this.r * 0.05, -this.r * 0.55, this.r * 0.09)
             circle(-this.r * 0.4, this.r * 0.42, this.r * 0.09)

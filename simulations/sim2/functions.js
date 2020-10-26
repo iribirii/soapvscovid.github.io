@@ -41,3 +41,15 @@ function mousePressed() {
 	nSoaps++
 	soaps.push(new Cell(mouseX - width/2, mouseY - height/2, "S"))
 }
+
+function connect(p1, p2) {
+    var dx = p1.pos.x - p2.pos.x;
+    var dy = p1.pos.y - p2.pos.y;
+    var dSq = dx ** 2 + dy ** 2;
+    if (dSq <= 300 * p1.r) {
+        var dens = map(dSq, 0, 100 * p1.r, 0, 255)
+        stroke(100,50,100, 255 - dens * 0.85)
+        strokeWeight(p1.r / 5)
+        line(p1.pos.x, p1.pos.y, p2.pos.x, p2.pos.y);
+    }
+}

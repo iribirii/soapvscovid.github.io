@@ -14,12 +14,12 @@ var cells = [];                             // empty array to contain all the pr
 
 // Variables involving the virus DNA particles
 var nDNA = 100;                             // number of DNA particles inside the virus
-var radiD = 10;                             // radii of the DNA particles
+var radiD = canvas_height / 50;                             // radii of the DNA particles
 var dnas = [];                              // empty array to contain all the dnas
 
 // Variables involving the soap particles
 var nSoaps = 0;                             // initial number of soap particles
-var radiS = 10;                             // radii of the soap particles
+var radiS = canvas_height / 40;                             // radii of the soap particles
 var soaps = [];                             // empty array to contain all the soap particles
 
 // Other variables
@@ -79,6 +79,11 @@ function draw() {
         for (j = 0; j < cells.length; j++) {
             if (i != j) {
                 elastic(dnas[i], cells[j]);     // elastic collision between particles
+            }
+        }
+        for (j = i; j < dnas.length; j++) {
+            if (i != j) {
+                connect(dnas[i], dnas[j]);
             }
         }
         dnas[i].edges();
