@@ -74,12 +74,46 @@ input, select, textarea {
 
 /* Mis cosas */
 
-#water-tank {
+#water-tank-sim1 {
 	width: 100%;
-    background-color: #00aaff;
+    background-color: #804000;
     cursor: pointer;
     justify-content: center;
     align-items: center;
+}
+
+#water-tank-sim2 {
+	width: 100%;
+    background-color: #00AAFF;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    position: relative;
+    padding: 1rem;
+    align-items: center;
+	text-align: center;
+    justify-content: center;
+}
+
+.spacer {
+    width: 10rem;
+    height:auto;
+    display:inline-block;
+}
+
+#soap_button {
+    width:10rem;
+    height:auto;
+    display:inline-block;
+}
+
+#reset_button {
+    width:10rem;
+    height:auto;
+    display:inline-block;
 }
 
 /* Basic */

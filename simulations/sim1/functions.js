@@ -37,7 +37,28 @@ function elastic(p1, p2) {
 }
 
 //This function creates a soap particle an adds it to the soaps array
-function mousePressed() {
+// function mousePressed() {
+	// nPart++
+	// particles.push(new Particle(mouseX, mouseY, "S"))
+// }
+
+function newSoap() {
 	nPart++
-	particles.push(new Particle(mouseX, mouseY, "S"))
+    x = random(canvas_width)
+    y = random(canvas_height*0.8)
+	particles.push(new Particle(x, y, "S"))
+}
+
+function resetSketch() {
+    viruses = [];
+    particles = [];
+    nPart = 0;
+    for (var i = 1; i <= nVirus; i++) {
+        var x = ((spaceVirus * i) - 5 ) - radiV;
+        var y = canvas_height - radiV;
+        var t = "V";
+
+        var tmp = new Particle(x, y, t);
+        viruses.push(tmp);
+    }    
 }

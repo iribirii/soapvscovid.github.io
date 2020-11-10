@@ -1,9 +1,13 @@
 // Global variables to define the simulation
 
 // Canvas dimensions
-var canvasDiv = document.getElementById('water-tank');
+var canvasDiv = document.getElementById('water-tank-sim1');
 var canvas_width = canvasDiv.offsetWidth;
 var canvas_height = canvas_width * 0.6;
+
+// Buttons
+var soap_button = document.getElementById('soap_button');
+var reset_button = document.getElementById('reset_button');
 
 // Variables involving the virus 
 var nVirus = 8;                             // number of viruses 
@@ -24,17 +28,17 @@ var iniVel = 1.5;                           // magnitude of the velicities at st
 // Setting up the simulation
 function setup() {
     let cnv = createCanvas(canvas_width, canvas_height);
-    cnv.parent('water-tank');
+    cnv.parent('water-tank-sim1');
 
-// CREATION OF THE VIRUS
-    for (var i = 1; i <= nVirus; i++) {
-        var x = ((spaceVirus * i) - 5 ) - radiV;
-        var y = canvas_height - radiV;
-        var t = "V";
+    resetSketch();
 
-        var tmp = new Particle(x, y, t);
-        viruses.push(tmp);
-    }    
+    let reset_button = createButton('Reset');
+    reset_button.parent('reset_button');
+    reset_button.mousePressed(resetSketch);
+
+    let soap_button = createButton('New Soap');
+    soap_button.parent('soap_button');
+    soap_button.mousePressed(newSoap);
 }
 
 // Drawing loop

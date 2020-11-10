@@ -1,7 +1,7 @@
 // Global variables to define the simulation
 
 // Canvas dimensions
-var canvasDiv = document.getElementById('water-tank');
+var canvasDiv = document.getElementById('water-tank-sim2');
 var canvas_width = canvasDiv.offsetWidth;
 var canvas_height = canvas_width * 0.6;
 
@@ -30,7 +30,7 @@ var iniVel = 1;                             // initial velocity magnitude
 
 function setup() {
     let cnv = createCanvas(canvas_width, canvas_height);
-    cnv.parent('water-tank')
+    cnv.parent('water-tank-sim2')
 
     // Creation of the capsule of the virus
     // it creates a circunference of nCap proteins
