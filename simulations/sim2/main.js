@@ -5,6 +5,10 @@ var canvasDiv = document.getElementById('water-tank-sim2');
 var canvas_width = canvasDiv.offsetWidth;
 var canvas_height = canvas_width * 0.6;
 
+// Buttons
+var soap_button = document.getElementById('soap_button');
+var reset_button = document.getElementById('reset_button');
+
 // Variables involving the virus capsule
 var nCap = 18;                              // number of proteins forming the capsule
 var angle = 360/nCap;                       // angle between the different proteins 
@@ -32,26 +36,18 @@ function setup() {
     let cnv = createCanvas(canvas_width, canvas_height);
     cnv.parent('water-tank-sim2')
 
+    resetSketch();
+
+    let reset_button = createButton('Reset');
+    reset_button.parent('reset_button');
+    reset_button.mousePressed(resetSketch);
+
+    let soap_button = createButton('New Soap');
+    soap_button.parent('soap_button');
+    soap_button.mousePressed(newSoap);
+
     // Creation of the capsule of the virus
     // it creates a circunference of nCap proteins
-    for (var i = 0; i < nCap; i++) {
-    	angleMode(DEGREES);
-	    var x1 = rCell * cos(angle * i);
-   		var y1 = rCell * sin(angle * i);
-
-   		cells.push(new Cell(x1,y1,"C", angle * i));
-    }
-
-    // Creation of the DNA inside the virus
-    // it creates nDNA particles in a random position inside the virus
-    for (var i = 0; i < nDNA; i++) {
-    	var rdna = random(0, rCell * 0.5);   // sets a random radii between two values
-    	var angledna = random(0,360);               // sets a random angle between 0 and 360
-        // coordinates from polar to cartesian
-	    var xdna = rdna * cos(angledna);            
-	    var ydna = rdna * sin(angledna);
-    	dnas.push(new Cell(xdna, ydna, "D", 0))
-    }
 }
 
 
@@ -69,7 +65,7 @@ function draw() {
         } else {
             soaps[i].move();
             soaps[i].edges();
-            soaps[i].tilt(4);
+            soaps[i].tilt(20);
             soaps[i].show();
         }
     }

@@ -37,9 +37,14 @@ function elastic(p1, p2) {
 }
 
 // This funtion creates a soap particle and adds it to the soaps array
-function mousePressed() {
+function newSoap() {
 	nSoaps++
-	soaps.push(new Cell(mouseX - width/2, mouseY - height/2, "S"))
+    var rsoap = random(rCell, rCell * 2)
+    var anglesoap = random(0,360);
+    var xsoap = rsoap * cos(anglesoap);
+    var ysoap = rsoap * sin(anglesoap);
+	soaps.push(new Cell(xsoap , ysoap , "S"))
+
 }
 
 function connect(p1, p2) {
@@ -51,5 +56,33 @@ function connect(p1, p2) {
         stroke(100,50,100, 255 - dens * 0.85)
         strokeWeight(p1.r / 5)
         line(p1.pos.x, p1.pos.y, p2.pos.x, p2.pos.y);
+    }
+}
+
+function resetSketch() {
+    dnas = [];
+    soaps = [];
+    cells = [];
+    nPart = 0;
+    nSoaps = 0;
+    nFree = 0;
+
+    for (var i = 0; i < nCap; i++) {
+    	angleMode(DEGREES);
+	    var x1 = rCell * cos(angle * i);
+   		var y1 = rCell * sin(angle * i);
+
+   		cells.push(new Cell(x1,y1,"C", angle * i));
+    }
+
+    // Creation of the DNA inside the virus
+    // it creates nDNA particles in a random position inside the virus
+    for (var i = 0; i < nDNA; i++) {
+    	var rdna = random(0, rCell * 0.5);   // sets a random radii between two values
+    	var angledna = random(0,360);               // sets a random angle between 0 and 360
+        // coordinates from polar to cartesian
+	    var xdna = rdna * cos(angledna);            
+	    var ydna = rdna * sin(angledna);
+    	dnas.push(new Cell(xdna, ydna, "D", 0))
     }
 }
