@@ -1,8 +1,8 @@
 # Soap vs COVID-19
 
-Soap vs COVID-19 is a project based on github's repository https://github.com/iribirii/soap_simulation by Mark Nolan and Inigo Iribarren. 
+Soap vs COVID-19 is a web project that shows in an accesible and interactive way how soap acts agains COVID-19 and why it is so important.
 
-This repository is a web page meant to be an accesible way for people to learn how soap acts againts COVID-19 and why using it is so important.
+The simulations shown in the project are based on github's repository https://github.com/iribirii/soap_simulation by Mark Nolan and Inigo Iribarren. 
 
 ## Usage
 
