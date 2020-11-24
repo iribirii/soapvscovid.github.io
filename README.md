@@ -12,6 +12,10 @@ The website has three different parts (stages):
 - Stage 2: Simulation of how a virus is destroyed by soap molecules.
 - Stage 3: A post showing the science behind this process in a very simple way.
 
+## Contact
+
+For any question regarding the website you can write an email to: iribarri@tcd.ie
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
